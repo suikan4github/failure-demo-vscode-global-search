@@ -41,6 +41,13 @@ The procedure is :
 5. These files are appeared as found during you open these file by editor. 
 6. In the editor, the above regex match with the appropriate lines (See the screenshot below ). 
 
+## Possible root cause
+The PCRE2 may have something wrong. 
+
+According the official Wiki, the VS Code uses ripgrep for the global search engine, if the file is not opened. The ripgrep doesn't support the look-around. So it will be fall back to PCRE2. This is explained in the [Search Issues - Notes on regular expression support](https://github.com/microsoft/vscode/wiki/Search-Issues#notes-on-regular-expression-support) in the vscode repository. 
+
+The opened file will be searched by javascript search engine. So, this problem may not happen. 
+
 ## Screenshot 
 The 001.md, 002.md and 003.md are not shown as the found file.  
 ![](image/2024-12-11%20(2).png)
