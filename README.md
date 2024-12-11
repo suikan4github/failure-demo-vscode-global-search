@@ -1,8 +1,8 @@
 # Failure demo of vscode global search
-This repository demonstrate a regex global search failure of the VS Code editor among the files with UNICODE wide characters. 
+This repository demonstrate a regex global search (Shift+Control+F) failure of the VS Code editor among the files with UNICODE wide characters. 
 
 ## Version and environment. 
-
+The version information of the VS Code is following : 
 ```
 Version : 1.95.3 (system setup)
 Commit : f1a4fb101478ce6ec82fe9627c43efbf9e98c813
@@ -17,7 +17,6 @@ OS: Windows_NT x64 10.0.22631
 ## Description of the failure. 
 When there are multiple files which contains UNICODE wide characters, VS code fails to search globally with the following regular expression. 
 
-- 
 ```
 ^(?!(<|$|#))
 ```
@@ -27,6 +26,7 @@ This regular expression must match a line which doesn't have following character
 - $
 - \#
 
+But I found VS code cannot match by global search (Shift+Control+F)
 ## How to reproduce. 
 I could reproduce this failure on the following environment. 
 - Windows 11. 
