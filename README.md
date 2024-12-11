@@ -1,7 +1,7 @@
 # Failure demo of vscode global search
 This repository demonstrate a regex global search failure of the VS Code editor among the files with UNICODE wide characters. 
 
-# Version and environment. 
+## Version and environment. 
 
 ```
 Version : 1.95.3 (system setup)
@@ -14,7 +14,7 @@ Node.js: 20.18.0
 V8: 12.8.374.38-electron.0
 OS: Windows_NT x64 10.0.22631
 ```
-# Description of the failure. 
+## Description of the failure. 
 When there are multiple files which contains UNICODE wide characters, VS code fails to search globally with the following regular expression. 
 
 - 
@@ -27,7 +27,7 @@ This regular expression must match a line which doesn't have following character
 - $
 - \#
 
-# How to reproduce. 
+## How to reproduce. 
 I could reproduce this failure on the following environment. 
 - Windows 11. 
 - Ubuntu 24.04 on WSL.
@@ -40,3 +40,9 @@ The procedure is :
 4. You will see the file 001.md, 002.md and 003.md is not appeared as found files(See the screen shot below ).
 5. These files are appeared as found during you open these file by editor. 
 6. In the editor, the above regex match with the appropriate lines (See the screenshot below ). 
+
+## Screenshot 
+The 001.md, 002.md and 003.md are not shown as the found file.  
+![](image/2024-12-11%20(2).png)
+In the editor, the regex match with the appropriate lines. 
+![](image/2024-12-11%20(1).png)
